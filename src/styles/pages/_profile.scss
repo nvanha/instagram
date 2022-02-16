@@ -1,0 +1,286 @@
+:root {
+  --spacing: 14px;
+  --background-post-hover: rgba(0, 0, 0, 0.3);
+}
+
+.profile-wrapper {
+  .profile-inner {
+    margin-top: 61px;
+    padding-top: 30px;
+    margin-bottom: 100px;
+  }
+
+  .user-info {
+    &--wrapper {
+      margin-bottom: 44px;
+      height: 150px;
+
+      .row {
+        margin: 0 !important;
+
+        .col {
+          padding: 0 !important;
+
+          &:first-child {
+            margin-right: 30px;
+            flex: 1;
+          }
+
+          &:last-child {
+            flex: 2;
+          }
+        }
+      }
+    }
+
+    &--avt {
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      overflow: hidden;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &--details {
+      @include flex();
+      flex-direction: column;
+
+      & > div {
+        width: 100%;
+
+        @include flex(center);
+
+        &:first-child,
+        &:nth-child(2) {
+          margin-bottom: 20px;
+        }
+      }
+
+      .username {
+        font-size: 28px;
+        line-height: 32px;
+        font-weight: 300;
+        color: $color-text-primary;
+      }
+
+      .btn-follow {
+        outline: none;
+        border: 0;
+        background-color: $button-background-primary;
+        color: $button-color-primary;
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 600;
+        padding: 5px 24px;
+        border-radius: 4px;
+        border: 1px solid $button-background-primary;
+
+        &.unfollow {
+          background-color: $background-primary !important;
+          color: $color-error-message !important;
+          border-color: $color-error-message !important;
+        }
+      }
+
+      .link-edit {
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 600;
+        color: $color-text-primary;
+        padding: 5px 9px;
+        border: 1px solid $border-primary;
+        border-radius: 4px;
+      }
+
+      .setting-icon {
+        border: 0;
+        outline: none;
+        background: none;
+        margin-left: 5px;
+        width: 40px;
+        height: 40px;
+
+        @include flex(center, center);
+      }
+
+      .interactive-list {
+        width: 100%;
+
+        @include flex(center);
+
+        .interactive-item {
+          margin-right: 40px;
+          font-size: 16px;
+          line-height: 18px;
+          font-weight: 400;
+          color: $color-text-primary;
+
+          span {
+            font-weight: 600;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .fullName {
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 600;
+        color: $color-text-primary;
+      }
+    }
+  }
+
+  .user-post {
+    &--wrapper {
+      width: 100%;
+    }
+
+    &--nav-link {
+      width: 100%;
+      height: 53px;
+      border-top: 1px solid $border-primary;
+
+      @include flex(center, center);
+
+      .nav {
+        gap: 60px;
+        margin-top: -2px;
+      }
+
+      .nav-link {
+        height: 52px;
+        display: inline-block;
+        width: fit-content;
+        padding: 0;
+        border-top: 1px solid transparent;
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 600;
+        color: $color-text-secondary;
+        text-transform: capitalize;
+        cursor: pointer;
+
+        &.active {
+          border-color: $color-text-primary !important;
+          color: $color-text-primary !important;
+        }
+
+        svg {
+          margin-right: 6px;
+        }
+
+        @include flex(center, center);
+      }
+    }
+
+    &--main {
+      .posts-wrapper {
+        .skeleton-post-wrapper {
+          width: calc(100% / 3 - var(--spacing) * 2);
+          height: 293px;
+          overflow: hidden;
+          margin: 28px var(--spacing) 0;
+
+          &:first-child,
+          &:nth-child(2),
+          &:nth-child(3) {
+            margin-top: 0;
+          }
+        }
+
+        .posts-list {
+          margin: 0 calc(var(--spacing) * -1);
+
+          @include flex();
+          flex-wrap: wrap;
+        }
+
+        .posts-item {
+          width: calc(100% / 3 - var(--spacing) * 2);
+          height: 293px;
+          overflow: hidden;
+          margin: 28px var(--spacing) 0;
+          position: relative;
+          cursor: pointer;
+
+          &:first-child,
+          &:nth-child(2),
+          &:nth-child(3) {
+            margin-top: 0;
+          }
+
+          &--photo {
+            width: 100%;
+            height: 100%;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          &:hover > .posts-item--hover {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          &--hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-post-hover);
+            transition: all 100ms linear;
+
+            @include flex(center, center);
+            gap: 30px;
+
+            opacity: 0;
+            visibility: hidden;
+
+            & > div {
+              color: $button-color-primary;
+              font-size: 16px;
+              line-height: 19px;
+              font-weight: 600;
+
+              @include flex(center, center);
+              gap: 7px;
+
+              span {
+                display: inline-block;
+                background-repeat: no-repeat;
+                height: 19px;
+                width: 19px;
+
+                &.like {
+                  background-position: -340px -333px;
+                }
+
+                &.comment {
+                  background-position: -382px -333px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.notfound-wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  .notfound-header {
+    @include flex(center, space-between);
+    padding: 0 20px;
+    height: 60px;
+    border-bottom: 1px solid $border-primary;
+    background-color: $background-primary;
+
+    &--logo {
+      width: 103px;
+      height: 29px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &--nav {
+      a {
+        background-color: $background-primary;
+        color: $color-link-primary;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 600;
+        padding: 5px 9px;
+        display: inline-block;
+
+        &.login {
+          background-color: $button-background-primary;
+          color: $button-color-primary;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  .notfound-main {
+    width: 100%;
+    height: calc(100% - 60px);
+    @include flex(center, center);
+    flex-direction: column;
+
+    &--title {
+      color: $color-text-primary;
+      font-size: 22px;
+      line-height: 26px;
+      font-weight: 600;
+    }
+
+    &--desc {
+      color: $color-text-primary;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      margin-top: 40px;
+
+      a {
+        color: $color-link-secondary;
+      }
+    }
+  }
+}

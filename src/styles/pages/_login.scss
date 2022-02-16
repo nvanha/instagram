@@ -1,0 +1,137 @@
+.login-wrapper {
+  width: 100vw;
+  height: 100vh;
+  @include flex(center, center);
+
+  .login-container {
+    margin-top: 32px;
+    padding-bottom: 32px;
+    @include flex(center, center);
+  }
+
+  .login-col-left {
+    width: 454px;
+    height: 618px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .login-col-right {
+    @include flex(stretch);
+    flex-direction: column;
+    gap: 10px;
+
+    &--error-msg {
+      width: 268px;
+      color: $color-error-message;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    &--wrapper-item {
+      background-color: $background-primary;
+      border: 1px solid $border-primary;
+      padding: 33px 41px;
+
+      &:nth-child(2) {
+        padding: 25px 0;
+      }
+    }
+
+    &--header-logo {
+      width: 175px;
+      height: 51px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin: 0 auto;
+    }
+
+    &--form-login {
+      margin-top: 37px;
+
+      @include flex();
+      flex-direction: column;
+
+      .input-control {
+        position: relative;
+
+        input {
+          width: 268px;
+          height: 38px;
+          margin-bottom: 6px;
+          background-color: $background-secondary;
+          color: $color-text-primary;
+          line-height: 18px;
+          font-size: 14px;
+          border: 1px solid $border-primary;
+          padding: 9px 8px 7px 8px;
+          border-radius: 3px;
+          outline: none;
+
+          &:focus,
+          &:focus-visible {
+            border-color: #000 !important;
+          }
+
+          &::-webkit-input-placeholder {
+            color: $input-placeholder-color;
+          }
+
+          &::-moz-input-placeholder {
+            color: $input-placeholder-color;
+          }
+
+          &.password {
+            padding-right: 60px !important;
+          }
+        }
+
+        .show-password {
+          position: absolute;
+          top: calc(50% - 3px);
+          right: 8px;
+          transform: translateY(-50%);
+          color: $color-text-primary;
+          font-size: 14px;
+          font-weight: 500;
+          cursor: pointer;
+        }
+      }
+
+      .input-submit {
+        width: 268px;
+        height: 30px;
+        margin: 8px 0;
+        background-color: $button-background-primary;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        color: $button-color-primary;
+        outline: none;
+        border: 1px solid transparent;
+        cursor: pointer;
+
+        &.disabled {
+          background-color: $button-background-primary-disable !important;
+          pointer-events: none !important;
+        }
+      }
+    }
+
+    &--register {
+      text-align: center;
+      font-size: 14px;
+      color: $color-text-primary;
+
+      a {
+        color: $color-link-primary;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+  }
+}

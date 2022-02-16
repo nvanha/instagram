@@ -1,0 +1,10 @@
+.dashboard-main {
+  padding-top: 30px;
+  margin-top: 61px;
+
+  &--inner {
+    @include flex();
+    gap: 28px;
+    position: relative;
+  }
+}
