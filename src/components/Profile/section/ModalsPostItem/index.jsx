@@ -49,8 +49,6 @@ const ModalsPostItem = ({ show, data, profile, handleClose }) => {
       });
   };
 
-  // console.log({ allComments });
-
   return (
     <Modal
       show={show}

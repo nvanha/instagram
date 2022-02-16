@@ -4,7 +4,6 @@ import Skeleton from "react-loading-skeleton";
 import PostItem from "./section/PostItem";
 
 const Posts = ({ photosCollection, handleOpenModalsPostItem }) => {
-  console.log(photosCollection);
   return (
     <>
       <div className="posts-wrapper">

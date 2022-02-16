@@ -16,6 +16,8 @@ const Post = ({ data }) => {
    *  -> header, image, actions (like & comment icons), footer, comments
    */
 
+  console.log({ data });
+
   return (
     <div className="post-wrapper">
       <Header username={data.username} />

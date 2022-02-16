@@ -6,7 +6,6 @@ import InputComment from "./InputComment";
 
 const Comments = ({ docId, comments: allComments, posted, commentInput }) => {
   const [comments, setComments] = useState(allComments);
-  console.log("comments: ", comments);
 
   return (
     <>
